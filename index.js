@@ -3,13 +3,11 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 
 // array of questions for user
+
+ 
+  
 const dataPrompt = () => {
-    // console.log(`
-    // ============================
-    // Lets create a quality README
-    // ============================
-    
-    // `),
+   
     return inquirer.prompt([
   
    {
@@ -39,23 +37,42 @@ const dataPrompt = () => {
      }
    },
    {
-    type: 'confirm',
-    name: 'confirmIntallInstruct',
-    message: 'Would you like to give instructions for installation?',
-    default: false
-
-   },
-   {
     type: 'input',
     name: 'installInstruct',
     message: 'What are the instructions for installation?',
-    when: ({confirmInstallInstruct}) => confirmInstallInstruct
+   
    },
+   {
+    type: 'confirm',
+    name: 'confirmInstallSnip',
+    message: 'Would you like to provide a code snippet example for installation?',
+    default: false
+
+   },
+    {
+        type:'input',
+        name: 'installSnip',
+        message: 'Enter code snipet here:',
+        when: ({confirmInstallSnip}) => confirmInstallSnip
+
+    },
    {
     type: 'input',
     name: 'usage',
     message: 'Give an example of usage :'   
    },
+   {
+    type: 'confirm',
+    name: 'confirmUsageSnip',
+    message: 'Would you like to provide a code snippet example for usage?',
+    default: false
+    },
+    {
+        type:'input',
+        name: 'usageSnip',
+        message: 'Enter code snipet here:',
+        when: ({confirmUsageSnip}) => confirmUsageSnip
+    },
    {
     type: 'list',
     name: 'license',
@@ -76,19 +93,35 @@ const dataPrompt = () => {
    {
    type: 'input',
    name: 'email',
-   message:'Enter an email to direct inqueries to:(Required)'
+   message:'Enter an email to direct inqueries to:(Required)',
+   validate: emailInput => {
+    if (emailInput) {
+        return true;
+    }else{
+        console.log('You must provide an email')
+        return false;
+     }
+   }
    },
    {
     type:'input',
     name: 'github',
-    message: 'and, please provide a link to your GitHub profile:(Required)'  
+    message: 'and lastly, please provide a link to your GitHub profile:(Required)',
+    validate: githubInput => {
+        if (githubInput) {
+            return true;
+        }else{
+            console.log('You must provide a link to your GitHub')
+            return false;
+        }
+    }  
    }
   
-
 
 ])
 
 };
+ 
 // function to write README file
 // function writeToFile(fileName, data) {
 // }
@@ -101,5 +134,34 @@ const dataPrompt = () => {
 // // function call to initialize program
 // init();
 
-dataPrompt()
-.then(data => {console.log(data)})
+const init = () =>{
+    console.log(`
+    ============================
+    Lets create a quality README
+    ============================
+     
+    `)
+  dataPrompt()
+.then(data => {fs.writeFile('README.md', generateMarkdown(data), err => {
+    if (err) throw err;
+  
+    console.log('README complete! Check out README.md to see the output!');
+  });})
+
+}
+
+//   .then(data => {return generateMarkdown(data);
+//   })
+//  
+
+//     fs.writeFile('./dist/README.md', pageMD, err => {
+//             if (err) throw err;
+//                         console.log ('README complete! Check out README.md in the dist folder to see the output')
+            
+
+//  }))
+// )
+// .catch(err=> {
+//     console.log(err);
+// });
+init()
