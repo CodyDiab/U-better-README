@@ -4,6 +4,7 @@ const fs = require('fs');
 function generateMarkdown(data) {
   return `
   # ${data.title}
+  ![Badge](https://img.shields.io/badge/license-${data.license.replace(" ", "_")}-yellowgreen)        
     
   ${data.description}
   
@@ -16,21 +17,22 @@ function generateMarkdown(data) {
   * [Questions](#Questions)
   
   ##Installation
-    ${data.installInstruct}
+  ${data.installInstruct}
   
   
   ## Usage
-    ${data.usage}
+  ${data.usage}
 
   ## License
-    ${data.license}
+  ${data.license}
   ## Contributing
-    ${data.contribute}
+  ${data.contribute}
   ## Tests
-    ${data.test}
+  ${data.test}
   ## Questions
-   [Email](${data.email})
-   [GitHub](${data.github})
+  [Email](${data.email})
+
+  [GitHub](${data.github})
 `;
 };
 
