@@ -1,11 +1,30 @@
 // function to generate markdown for README
 const fs = require('fs');
 
+const licenseBadge = licenseAnswer => {
+  if (licenseAnswer == 'No License') {
+    return '';}
+    return 
+    `![Badge](https://img.shields.io/badge/license-${licenseAnswer.replace(" ", "_")}-yellowgreen)
+   
+    `;
+}
+const snipCode = (answer,response) => {
+  if (answer){
+    return `
+       
+       ${response}
+
+       
+    `;
+  }
+}
+
+
 function generateMarkdown(data) {
   return `
   # ${data.title}
-  ![Badge](https://img.shields.io/badge/license-${data.license.replace(" ", "_")}-yellowgreen)        
-    
+  ![Badge](https://img.shields.io/badge/license-${data.license.replace(" ", "_")}-yellowgreen)
   ${data.description}
   
   ## Table of Contents
@@ -16,13 +35,12 @@ function generateMarkdown(data) {
   * [Tests](#Tests)
   * [Questions](#Questions)
   
-  ##Installation
+  ## Installation
   ${data.installInstruct}
-  
-  
+  ${snipCode(data.confirmInstallSnip,data.installSnip)}
   ## Usage
   ${data.usage}
-
+  ${snipCode(data.confirmUsageSnip,data.usageSnip)}
   ## License
   ${data.license}
   ## Contributing
