@@ -4,11 +4,14 @@ const fs = require('fs');
 const licenseBadge = licenseAnswer => {
   if (licenseAnswer == 'No License') {
     return '';}
-    return 
-    `![Badge](https://img.shields.io/badge/license-${licenseAnswer.replace(" ", "_")}-yellowgreen)
-   
-    `;
+    return `
+    ![Badge](https://img.shields.io/badge/license-${licenseAnswer.replace(" ", "_")}-yellowgreen)
+    
+    `
+    
+    
 }
+
 const snipCode = (answer,response) => {
   if (answer){
     return `
@@ -24,7 +27,7 @@ const snipCode = (answer,response) => {
 function generateMarkdown(data) {
   return `
   # ${data.title}
-  ![Badge](https://img.shields.io/badge/license-${data.license.replace(" ", "_")}-yellowgreen)
+  ${licenseBadge(data.license)}
   ${data.description}
   
   ## Table of Contents

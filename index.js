@@ -2,10 +2,7 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-// array of questions for user
-
- 
-  
+// aquestions array
 const dataPrompt = () => {
    
     return inquirer.prompt([
@@ -121,19 +118,7 @@ const dataPrompt = () => {
 ])
 
 };
- 
-// function to write README file
-// function writeToFile(fileName, data) {
-// }
-
-// // function to initialize program
-// function init() {
-
-// }
-
-// // function call to initialize program
-// init();
-
+ // app init
 const init = () =>{
     console.log(`
     ============================
@@ -150,18 +135,4 @@ const init = () =>{
 
 }
 
-//   .then(data => {return generateMarkdown(data);
-//   })
-//  
-
-//     fs.writeFile('./dist/README.md', pageMD, err => {
-//             if (err) throw err;
-//                         console.log ('README complete! Check out README.md in the dist folder to see the output')
-            
-
-//  }))
-// )
-// .catch(err=> {
-//     console.log(err);
-// });
 init()
