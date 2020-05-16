@@ -1,7 +1,7 @@
 
   # U Better README
   
-  This application will accept user input via the comand line, then dynamicly generate a quality README.md file.This very document was created using the application
+  This application will accept user input via the comand line, then dynamically generate a quality README.md file.This very document was created using the application.
   
   ## Table of Contents
   * [Installation](#installation)
@@ -12,7 +12,7 @@
   * [Questions](#Questions)
   
   ## Installation
-  The application is dependant on the inquirer npm, so this must be installed prior to running.
+  The application is dependant to the inquirer npm, so this must be installed prior to running.
   
        
        npm intall inquirer
