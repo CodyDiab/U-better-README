@@ -103,7 +103,7 @@ const dataPrompt = () => {
    {
     type:'input',
     name: 'github',
-    message: 'and lastly, please provide a link to your GitHub profile:(Required)',
+    message: 'and lastly, please provide your GitHub user name:(Required)',
     validate: githubInput => {
         if (githubInput) {
             return true;
@@ -127,11 +127,11 @@ const init = () =>{
      
     `)
   dataPrompt()
-.then(data => {fs.writeFile('README.md', generateMarkdown(data), err => {
+.then(data => {fs.writeFile('./dist/README.md', generateMarkdown(data), err => {
     if (err) throw err;
   
-    console.log('README complete! Check out README.md to see the output!');
-  });})
+    console.log('README complete! Check out README.md in the dist file to see the output!');
+  });}) 
 
 }
 

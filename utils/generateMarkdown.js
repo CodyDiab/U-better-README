@@ -4,8 +4,8 @@ const fs = require('fs');
 const licenseBadge = licenseAnswer => {
   if (licenseAnswer == 'No License') {
     return '';}
-    return `
-    ![Badge](https://img.shields.io/badge/license-${licenseAnswer.replace(" ", "_")}-yellowgreen)
+  return `
+   ![Badge](https://img.shields.io/badge/license-${licenseAnswer.replace(" ", "_")}-yellowgreen)
     
     `
     
@@ -51,9 +51,9 @@ function generateMarkdown(data) {
   ## Tests
   ${data.test}
   ## Questions
-  [Email](${data.email})
+  [Email](mailto:${data.email})
 
-  [GitHub](${data.github})
+  [GitHub](https://github.com/${data.github})
 `;
 };
 

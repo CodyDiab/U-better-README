@@ -1,7 +1,7 @@
 
   # U Better README
   
-  This application accepts user input on prompted question, then dynamicly generates a quality README.md file. This very document was created using the application.
+  This application will accept user input via the comand line, then dynamicly generate a quality README.md file.This very document was created using the application
   
   ## Table of Contents
   * [Installation](#installation)
@@ -12,15 +12,15 @@
   * [Questions](#Questions)
   
   ## Installation
-  The app is dependant on the inquirer npm, so this must be installed prior to running.
+  The application is dependant on the inquirer npm, so this must be installed prior to running.
   
        
-       npm install inquirer
+       npm intall inquirer
 
        
     
   ## Usage
-  From your comand line, once installed simply run a comand to open the application in Node. from there follow the prompted input.
+  To use simply run the application in node via the comand line, by calling index.
   
        
        node index
@@ -30,10 +30,10 @@
   ## License
   No License
   ## Contributing
-  If one would like to contribute simply create an issue, or contact via email.
+  To contribute, simply open an issue or contact provided email
   ## Tests
-  There are no runable tests in place at the present time.
+  There are not testing procedures in place at the moment
   ## Questions
-  [Email](emailcodydiab@gmail.com)
+  [Email](mailto:emailcodydiab@gmail.com)
 
-  [GitHub](github.com/CodyDiab)
+  [GitHub](https://github.com/CodyDiab)
