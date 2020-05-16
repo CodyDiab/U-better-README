@@ -15,7 +15,7 @@
   * [Questions](#Questions)
   
   ## Installation
-  there is nothing to install, to install nothing nun install nothing
+  there is nothing to install, to install nothing run npm install nothing
   
        
        npm install nothing

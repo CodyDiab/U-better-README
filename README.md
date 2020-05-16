@@ -39,4 +39,4 @@
   [GitHub](https://github.com/CodyDiab)
 
   ## Video Example 
- [Link](https://drive.google.com/file/d/1BflcPraoaxAe4jGgskQ3QyZJ1LCiYRMZ/preview)
+ [Link](https://drive.google.com/file/d/1BflcPraoaxAe4jGgskQ3QyZJ1LCiYRMZ/view)
